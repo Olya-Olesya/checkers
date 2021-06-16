@@ -8,8 +8,7 @@ int main() {
 	sf::Game sf::game;
 
 	sf::RenderWindow sf::window(sf::VideoMode(500, 500), "Checkers");
-	//рисуем шашки и поле
-
+	//РђРђР°Р°Р°Р°Р°Р°Р°Р°Р°Р°Р°Р°Р°Р°Р°
 	bool start;
 	start = true;
 	while (sf::window.isOpen()) {
@@ -20,7 +19,7 @@ int main() {
 		}
 		sf::window.clear(sf::Color(185, 48, 91));
 		if (start) { game.start_game(sf::window, sf::event, start); }
-		//рисуем конец игры	
+		//Г°ГЁГ±ГіГҐГ¬ ГЄГ®Г­ГҐГ¶ ГЁГЈГ°Г»	
 		sf::window.display();
 	}
 
