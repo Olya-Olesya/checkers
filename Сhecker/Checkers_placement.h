@@ -3,29 +3,32 @@
 #include "Checker_attribute.h"
 #include "Board.h"
 
-/**Класс, описывающий методы для расставления шашек на поле*/
+/**РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РјРµС‚РѕРґС‹ РґР»СЏ СЂР°СЃСЃС‚Р°РІР»РµРЅРёСЏ С€Р°С€РµРє РЅР° РїРѕР»Рµ*/
 class Checkers_placement {
 private:
+	/// РњР°СЃСЃРёРІ, РІ РєРѕС‚РѕСЂРѕРј СЃРѕРґРµСЂР¶Р°С‚СЃСЏ РІСЃРµ С€Р°С€РєРё
 	vector <Checker_attribute> checkers;
+	/// РћР±СЉРµРєС‚ РєР»Р°СЃСЃР° Board, СЃРѕРґРµСЂР¶Р°С‰РёР№ РІСЃСЋ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїРѕР»РѕР¶РµРЅРёРё РєР»РµС‚РѕРє РЅР° РґРѕСЃРєРµ
 	Board board;
 public:
+	/// Р’РѕР·РІСЂР°С‰Р°РµС‚ СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РґРѕСЃРєСѓ
 	Board &get_board() {
 		return this->board;
 	}
-
+	/// Р’РѕР·РІСЂР°С‰Р°РµС‚ РЅРѕРјРµСЂ С€Р°С€РєРё РІ РјР°СЃСЃРёРІРµ
 	Checker_attribute &get_checker(int _i) {
 		return this->checkers[_i];
 	}
-
+	/// Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂР°Р·РјРµСЂ С€Р°С€РєРё
 	int get_size() {
 		return this->checkers.size();
 	}
 
-	/**Функция расставляет шашки на доске*/
+	/**Р¤СѓРЅРєС†РёСЏ СЂР°СЃСЃС‚Р°РІР»СЏРµС‚ С€Р°С€РєРё РЅР° РґРѕСЃРєРµ*/
 	void start_game() {
 		for (int i = 0; i < 24; i++) {
 
-			/**Расставляются черные шашки в три ряда*/
+			/**Р Р°СЃСЃС‚Р°РІР»СЏСЋС‚СЃСЏ С‡РµСЂРЅС‹Рµ С€Р°С€РєРё РІ С‚СЂРё СЂСЏРґР°*/
 			if (i < 4) {
 				checkers.push_back(Checker_attribute((float)i * 180 + 187, (float)97, 1));
 				board.get_all_squares(i * 2 + 1, 0).square_employment(1);
@@ -39,7 +42,7 @@ public:
 				board.get_all_squares((i - 8) * 2 + 1, 2).square_employment(1);
 			}
 
-		    /**Расставляются белые шашки в три ряда*/
+		    /**Р Р°СЃСЃС‚Р°РІР»СЏСЋС‚СЃСЏ Р±РµР»С‹Рµ С€Р°С€РєРё РІ С‚СЂРё СЂСЏРґР°*/
 			else if (i >= 12 && i < 16) {
 				checkers.push_back(Checker_attribute((float)(i - 12) * 180 + 97, (float)547, 0));
 				board.get_all_squares((i - 12) * 2, 5).square_employment(0);
@@ -54,8 +57,8 @@ public:
 			}
 		}
 	}
-
-	/**Удаление шашки с поля*/
+	
+	/**РЈРґР°Р»РµРЅРёРµ С€Р°С€РєРё СЃ РїРѕР»СЏ*/
 	void delete_checker() {
 		checkers.pop_back();
 	}
@@ -64,14 +67,14 @@ public:
 		start_game();
 	};
 
-	/**Запуск функций рисования доски и шашек*/
+	/**Р—Р°РїСѓСЃРє С„СѓРЅРєС†РёР№ СЂРёСЃРѕРІР°РЅРёСЏ РґРѕСЃРєРё Рё С€Р°С€РµРє*/
 	void draw_checkers(sf::RenderWindow &_window) {
 		board.draw_board(_window);
 		for (int i = 0; i < checkers.size(); i++) {
 			checkers[i].draw_checker(_window);
 		}
 	}
-	/**Снятие выделения с клетки*/
+	/**РЎРЅСЏС‚РёРµ РІС‹РґРµР»РµРЅРёСЏ СЃ РєР»РµС‚РєРё*/
 	void delete_backlight() {
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
