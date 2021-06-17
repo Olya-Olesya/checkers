@@ -2,7 +2,7 @@
 #include "Game.h"
 #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 
-/**Основная функция, генерирует окно, начинает игру и заканчивает её*/
+/**РћСЃРЅРѕРІРЅР°СЏ С„СѓРЅРєС†РёСЏ, РіРµРЅРµСЂРёСЂСѓРµС‚ РѕРєРЅРѕ, РЅР°С‡РёРЅР°РµС‚ РёРіСЂСѓ Рё Р·Р°РєР°РЅС‡РёРІР°РµС‚ РµС‘*/
 int main() {
 	setlocale(LC_ALL, "rus");
 	Game game;
