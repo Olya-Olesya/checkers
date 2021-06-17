@@ -14,6 +14,7 @@ private:
 	sf::RectangleShape square = sf::RectangleShape(sf::Vector2f(90, 90));///< Рисует клетки доски 90х90 пикселей
 
 public:
+	///Возвращает клетку
 	sf::RectangleShape &get_square() {
 		return this->square;
 	}
@@ -37,17 +38,20 @@ public:
 	void off_backlight() {
 		this->backlight = 0;
 	}
-	///
+	/// Меняет статус клетки на занятую и определяет цвет шашки на ней
 	void square_employment(bool _color) {
 		this->employment = 1;
 		this->checker_color = _color;
 	}
+	/// Меняет статус клетки на свободную
 	void square_free() {
 		this->employment = 0;
 	}
+	/// Устанавливает цвет клетки
 	void set_color(sf::Color _color) {
 		this->square.setFillColor(_color);
 	}
+	/// Устанавливает позицию клетки
 	void set_position(float _x, float _y) {
 		this->square.setPosition(_x, _y);
 	}
