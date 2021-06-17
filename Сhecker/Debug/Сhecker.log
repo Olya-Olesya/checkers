@@ -1,0 +1,138 @@
+﻿  main.cpp
+C:\Evgenij\C-----\Сhecker\Board.h(22,56): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Board.h(22,46): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Board.h(34,41): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Board.h(34,33): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Board.h(68,35): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Board.h(70,36): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Board.h(76,37): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Board.h(78,37): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Checkers_placement.h(70,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Evgenij\C-----\Сhecker\Game.h(87,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(87,53): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(89,107): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Evgenij\C-----\Сhecker\Game.h(89,85): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Evgenij\C-----\Сhecker\Game.h(91,41): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(92,41): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(101,107): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Evgenij\C-----\Сhecker\Game.h(101,85): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Evgenij\C-----\Сhecker\Game.h(105,41): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(106,41): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(133,63): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(133,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(135,61): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(135,54): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(138,63): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(138,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(140,61): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(140,54): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(146,63): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(146,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(148,61): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(148,54): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(151,63): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(151,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(153,61): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(153,54): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(166,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(166,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(167,63): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(167,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(168,64): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(168,57): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(170,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(170,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(173,98): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(173,92): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(174,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(174,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(181,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(181,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(182,63): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(182,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(183,64): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(183,57): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(185,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(185,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(188,99): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(188,92): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(189,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(189,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(196,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(196,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(197,63): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(197,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(198,64): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(198,57): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(200,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(200,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(203,99): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(203,92): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(204,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(204,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(211,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(211,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(212,63): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(212,56): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(213,64): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(213,57): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(215,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(215,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(218,99): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(218,92): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(219,62): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(219,55): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(234,132): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(234,90): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(267,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(268,15): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(270,46): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(270,33): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(276,49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(276,36): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(297,13): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(298,13): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(300,46): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(300,33): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(306,49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(306,36): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(327,13): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(328,13): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(330,46): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(330,33): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(336,49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(336,36): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(357,13): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(358,13): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(360,46): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(360,33): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(366,49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(366,36): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(395,10): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(396,10): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(414,10): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(415,10): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(433,10): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(434,10): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(452,10): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(453,10): warning C4244: инициализация: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(472,131): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(472,89): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Evgenij\C-----\Сhecker\Game.h(33): warning C4715: Game::centre_on_square: значение возвращается не при всех путях выполнения
+  Сhecker.vcxproj -> C:\Evgenij\C-----\Debug\Сhecker.exe
