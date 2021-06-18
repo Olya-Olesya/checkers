@@ -16,6 +16,7 @@ private:
 	Checkers_placement checkers_on_board;
 	std::vector <int> who_must_eat; ///< массив, в котором хранятся шашки, которые могут съесть
 public:
+	///Шашка на поле
 	Checkers_placement & get_checkers_on_board() {
 		return this->checkers_on_board;
 	}
