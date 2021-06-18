@@ -1,26 +1,29 @@
 ﻿#include <SFML/Graphics.hpp>
 #include "Checkers_placement.h"
 
-/**Класс, описывающий методы игрового процесса: выбор и ходы шашек*/
+///Процесс игры
+/**
+*/
 class Game {
 private:
-	int how_many = 0;
-	bool who_can_move = 0;/**Переменная, обозначающая цвет шашки, которая ходит : 0 - ходит белая, 1 - ходит черная*/
-	bool select_is_made = 0;/**Переменная, обозначающая выбрана ли фигура: 0 - фигура не выбрана, 1 - фигура выбрана*/
-	int choise_chacker;/**Переменная, обозначающая номер выбранной для хода шашки*/
-	float x;/**Переменная, обозначающая номер клетки, в которой находится шашка по оси x*/
-	float y;/**Переменная, обозначающая номер клетки в которой шашка по оси у*/
-	sf::Vector2i mause_position;/**Переменная, обозначающая позицию мыши*/
+	int how_many = 0; ///< количество шашек
+	bool who_can_move = 0; ///< цвет шашки, которая ходит : 0 - ходит белая, 1 - ходит черная
+	bool select_is_made = 0; ///< выбрана ли фигура: 0 - фигура не выбрана, 1 - фигура выбрана
+	int choise_chacker; ///< номер выбранной для хода шашки
+	float x; ///< номер клетки, в которой находится шашка по оси x
+	float y; ///< номер клетки в которой шашка по оси у
+	sf::Vector2i mause_position; ///< позиция мыши
 	Checkers_placement checkers_on_board;
-	std::vector <int> who_must_eat; /**Массив, в котором хранятся шашки, которые могут съесть */
+	std::vector <int> who_must_eat; ///< массив, в котором хранятся шашки, которые могут съесть
 public:
 	Checkers_placement & get_checkers_on_board() {
 		return this->checkers_on_board;
 	}
-	/**Передает координаты мыши*/
+	///Передает координаты мыши
 	void set_mause_position(sf::RenderWindow &_window) {
 		this->mause_position = sf::Mouse::getPosition(_window);
 	}
+	///Диапазон клика, чтобы нажать на определенную клетку
 	sf::Vector2i centre_on_square() {
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
@@ -31,12 +34,16 @@ public:
 			}
 		}
 	}
-	/**Выбор шашки для хода*/
+	/** Выбор шашки
+	* нажати на клетку
+	* отмена выбора
+	* дальнейший ход
+	*/
 	void choise_of_chacker(sf::RenderWindow &_window, sf::Event _event) {
 		if (_event.type == sf::Event::MouseButtonPressed) {
 			if (_event.key.code == sf::Mouse::Left || _event.key.code == sf::Mouse::Right) {
 				set_mause_position(_window);
-				/**Отмена выбора фигуры*/
+				///Отмена выбора фигуры
 				if (_event.type == sf::Event::MouseButtonPressed) {
 					if (_event.key.code == sf::Mouse::Right) {
 						if (checkers_on_board.get_checker(choise_chacker).get_select() == 1 && select_is_made == 1) {
@@ -47,7 +54,7 @@ public:
 						}
 					}
 				}
-				/**Выбор фигуры*/
+				///если фигура не отменена, можно выбрать дальнейший ход
 				if (_event.key.code == sf::Mouse::Left){
 					for (int i = 0; i < checkers_on_board.get_size(); i++) {
 						if (this->mause_position.x >= checkers_on_board.get_checker(i).get_position().x - 12 &&
@@ -77,7 +84,13 @@ public:
 			}
 		}
 	}
-	/**Ход шашки*/
+	///Ход обычной шашки
+	/** обычный ход
+	* шашка доходит до края доски и становится дамкой
+	* изменение координат
+	* шашка перестает быть выбранной
+	*снятие выделений с клеток
+	*/
 	void change_position(sf::RenderWindow &_window, sf::Event _event) {
 		if (_event.type == sf::Event::MouseButtonPressed) {
 			if (_event.key.code == sf::Mouse::Left) {
@@ -121,14 +134,19 @@ public:
 			}
 		}
 	}
-	/**Запуск функций выбора шашки и хода*/
+	///Перемещение шашки в окне
 	void make_move(sf::RenderWindow &_window, sf::Event _event) {
 		choise_of_chacker(_window, _event);
 		change_position(_window, _event);
 	}
-	/**Варианты хода шашки*/
+	
+	///Варианты хода
+	/**Проверка возможности пойти на одну из нижних клеток
+	*Проверка возможности пойти на одну из верхних клеток
+	*Проверка возможности съесть шашку
+	*/
 	void square_for_move() {
-		/*Проверка нижних клеток**/
+		///Проверка нижних клеток
 		if (checkers_on_board.get_checker(choise_chacker).get_color()) {
 			if (checkers_on_board.get_board().get_all_squares(x + 1, y + 1).get_employment() == 0) {
 				if (not_end_of_board(x + 1, y + 1)) {
@@ -141,7 +159,7 @@ public:
 				}
 			}
 		}
-		/**Проверка верхних клеток*/
+		///Проверка верхних клеток
 		else {
 			if (checkers_on_board.get_board().get_all_squares(x + 1, y - 1).get_employment() == 0) {
 				if (not_end_of_board(x + 1, y - 1)) {
@@ -154,15 +172,23 @@ public:
 				}
 			}
 		}
+		///возможность съесть шашку
 		if (!chance_eat_checker(checkers_on_board.get_checker(choise_chacker).get_color())) {
 			checkers_on_board.delete_backlight();
 			chance_eat_checker(checkers_on_board.get_checker(choise_chacker).get_color());
 		}
 	}
-	/**Варианты съесть шашку*/
+	
+	///Варианты съесть шашку
+	/** Которая находится
+	*справа внизу
+	*слева внизу
+	*справа вверху
+	*слева вверху
+	*/
 	bool chance_eat_checker(bool _color) {
-		bool more = 1;
-		/**Проверка правой нижней клетки*/
+		bool more = 1; </// сколько шашек можно съесть
+		///Проверка правой нижней клетки
 		if (checkers_on_board.get_board().get_all_squares(x + 1, y + 1).get_employment()) {
 			if (checkers_on_board.get_board().get_all_squares(x + 1, y + 1).get_checker_color() != _color) {
 				if (checkers_on_board.get_board().get_all_squares(x + 2, y + 2).get_employment() == 0) {
@@ -177,7 +203,7 @@ public:
 				}
 			}
 		}
-		/**Проверка левой нижней клетки*/
+		///Проверка левой нижней клетки
 		if (checkers_on_board.get_board().get_all_squares(x - 1, y + 1).get_employment()) {
 			if (checkers_on_board.get_board().get_all_squares(x - 1, y + 1).get_checker_color() != _color) {
 				if (checkers_on_board.get_board().get_all_squares(x - 2, y + 2).get_employment() == 0) {
@@ -192,7 +218,7 @@ public:
 				}
 			}
 		}
-		/**Проверка правой верхней клетки*/
+		///Проверка правой верхней клетки
 		if (checkers_on_board.get_board().get_all_squares(x + 1, y - 1).get_employment()) {
 			if (checkers_on_board.get_board().get_all_squares(x + 1, y - 1).get_checker_color() != _color) {
 				if (checkers_on_board.get_board().get_all_squares(x + 2, y - 2).get_employment() == 0) {
@@ -207,7 +233,7 @@ public:
 				}
 			}
 		}
-		/**Проверка левой верхней клетки*/
+		///Проверка левой верхней клетки
 		if (checkers_on_board.get_board().get_all_squares(x - 1, y - 1).get_employment()) {
 			if (checkers_on_board.get_board().get_all_squares(x - 1, y - 1).get_checker_color() != _color) {
 				if (checkers_on_board.get_board().get_all_squares(x - 2, y - 2).get_employment() == 0) {
@@ -224,7 +250,8 @@ public:
 		}
 		return more;
 	}
-	/**Ем шашку*/
+	
+	///Шашка ест шашку
 	bool eat_checker() {
 		if ((centre_on_square().x - 97) / 90 - x == 2 || (centre_on_square().x - 97) / 90 - x == -2 &&
 			(centre_on_square().y - 97) / 90 - y == 2 || (centre_on_square().y - 97) / 90 - y == -2) {
@@ -245,27 +272,34 @@ public:
 		}
 		return 0;
 	}
-	/**Шашка становится дамкой*/
+	
+	///Шашка становится дамкой
 	void make_damka() {
-		/**Белая шашка становится дамкой*/
+		///Белая шашка становится дамкой
 		if (checkers_on_board.get_checker(choise_chacker).get_color() == 0) {
 			if (checkers_on_board.get_checker(choise_chacker).get_y() == 0) {
 				checkers_on_board.get_checker(choise_chacker).make_damka();
 			}
 		}
-		/**Черная шашка становится дамкой*/
+		///Черная шашка становится дамкой
 		if (checkers_on_board.get_checker(choise_chacker).get_color() == 1) {
 			if (checkers_on_board.get_checker(choise_chacker).get_y() == 7) {
 				checkers_on_board.get_checker(choise_chacker).make_damka();
 			}
 		}
 	}
-	/**Варианты хода дамки*/
+	
+	///Варианты хода дамки
+	/** правая нижняя диагональ
+	* левая нижняя диагональ
+	* правая верхняя диагональ
+	*левая верхняя диагональ
+	*/
 	bool damka_square_for_move(bool _color) {
 		checkers_on_board.delete_backlight();
-		/**Проверка правой нижней диагонали*/
-		int x_damka = x;
-		int y_damka = y;
+		///Проверка правой нижней диагонали
+		int x_damka = x; ///< абсцисса дамки
+		int y_damka = y; ///< ордината дамки
 		while (1) {
 			if (not_end_of_board(x_damka + 1, y_damka + 1)) {
 				if (checkers_on_board.get_board().get_all_squares(x_damka + 1, y_damka + 1).get_employment() == 1) {
@@ -293,7 +327,7 @@ public:
 			else break;
 		}
 
-		/**Проверка левой нижней диагонали*/
+		///Проверка левой нижней диагонали
 		x_damka = x;
 		y_damka = y;
 		while (1) {
@@ -323,7 +357,7 @@ public:
 			else break;
 		}
 
-		/**Проверка правой верхней диагонали*/
+		///Проверка правой верхней диагонали
 		x_damka = x;
 		y_damka = y;
 		while (1) {
@@ -353,7 +387,7 @@ public:
 			else break;
 		}
 
-		/**Проверка левой верхней диагонали*/
+		///Проверка левой верхней диагонали
 		x_damka = x;
 		y_damka = y;
 		while (1) {
@@ -385,12 +419,19 @@ public:
 	
 		return 0;
 	}
-	/**Дамка ест шашку*/
+	
+	///Дамка ищет и ест шашку
+	/**которая находится на правой нижней диагонали
+	*которая находится на левой нижней диагонали
+	*которая находится на правой верхней диагонали
+	*которая находится на левой верхней диагонали
+	*поедание
+	*/
 	bool damka_eat_checker() {
 		int x_eat = 0;
 		int y_eat = 0;
 
-		/**По правой нижней диагонали*/
+		///По правой нижней диагонали
 		if ((centre_on_square().x - 97) / 90 - x >= 2 && (centre_on_square().y - 97) / 90 - y >= 2) {
 			int i = x;
 			int j = y;
@@ -409,7 +450,7 @@ public:
 				else break;
 			}
 		}
-		/**По правой верхней диагонали*/
+		///По правой верхней диагонали
 		if ((centre_on_square().x - 97) / 90 - x >= 2 && y - (centre_on_square().y - 97) / 90 >= 2) {
 			int i = x;
 			int j = y;
@@ -428,7 +469,7 @@ public:
 				else break;
 			}
 		}
-		/**По левой нижней диагонали*/
+		///По левой нижней диагонали
 		if (x - (centre_on_square().x - 97) / 90 >= 2 && (centre_on_square().y - 97) - y / 90 >= 2) {
 			int i = x;
 			int j = y;
@@ -447,7 +488,7 @@ public:
 				else break;
 			}
 		}
-		/**По левой верхней диагонали*/
+		///По левой верхней диагонали
 		if (x - (centre_on_square().x - 97) / 90 >= 2 && y - (centre_on_square().y - 97) / 90 >= 2) {
 			int i = x;
 			int j = y;
@@ -466,7 +507,7 @@ public:
 				else break;
 			}
 		}
-
+		/// Дамка нашла шашку и ест
 		for (int f = 0; f < checkers_on_board.get_size(); f++) {
 			if (checkers_on_board.get_checker(f).get_x() == x_eat && checkers_on_board.get_checker(f).get_y() == y_eat) {
 				checkers_on_board.get_board().get_all_squares(checkers_on_board.get_checker(f).get_x(), checkers_on_board.get_checker(f).get_y()).square_free();
@@ -483,14 +524,15 @@ public:
 		}
 		return 0;
 	}
-	/**Проверка выхода за пределы поля*/
+	
+	///Проверка выхода за пределы поля
 	bool not_end_of_board(float _x, float _y) {
 		if (_x >= 0 && _x < 8 && _y >= 0 && _y < 8) {
 			return 1;
 		}
 		return 0;
 	}
-	/**Стартовый экран*/
+	///Стартовый экран
 	void start_game(sf::RenderWindow &_window, sf::Event _event, bool &_start) {
 		sf::Font font;
 		font.loadFromFile("Font//20832.ttf");
@@ -512,7 +554,12 @@ public:
 			}
 		}
 	}
-	/**Конец игры*/
+	
+	///Конец игры
+	/** подсчет шашек
+	* если черные победили
+	* если белые победили
+	*/
 	bool end_game(sf::RenderWindow &_window, sf::Event _event) {
 		int black = 0;
 		int white = 0;
@@ -524,7 +571,7 @@ public:
 				black++;
 			}
 		}
-		/**Если черные победили*/
+		///Победа черных
 		if (white == 0) {
 			_window.clear(sf::Color(175, 218, 252));
 			sf::Font font;
@@ -538,7 +585,7 @@ public:
 				_window.close();
 			return 0;		
 		}
-		/**Если белые победили*/
+		/// Победа белых
 		if (black == 0) {
 			_window.clear(sf::Color(175, 218, 252));
 			sf::Font font;
