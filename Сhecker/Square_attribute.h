@@ -18,11 +18,11 @@ public:
 	sf::RectangleShape &get_square() {
 		return this->square;
 	}
-	/// Возвращает статус клетки (выделенная/обычная)
+	/// Возвращает статус клетки (1-выделенная/0- обычная)
 	bool get_backlight() {
 		return this->backlight;
 	}
-	/// Возвращает информацию о клетке (занята/свободна)
+	/// Возвращает информацию о клетке (1-занята/0-свободна)
 	bool get_employment() {
 		return this->employment;
 	}
@@ -38,7 +38,9 @@ public:
 	void off_backlight() {
 		this->backlight = 0;
 	}
-	/// Меняет статус клетки на занятую и определяет цвет шашки на ней
+	/** Меняет статус клетки на занятую и определяет цвет шашки на ней
+	* \param _color цвет шашки
+	*/
 	void square_employment(bool _color) {
 		this->employment = 1;
 		this->checker_color = _color;
@@ -47,11 +49,16 @@ public:
 	void square_free() {
 		this->employment = 0;
 	}
-	/// Устанавливает цвет клетки
+	/** Устанавливает цвет клетки
+	* \param _color цвет 
+	*/
 	void set_color(sf::Color _color) {
 		this->square.setFillColor(_color);
 	}
-	/// Устанавливает позицию клетки
+	/** Устанавливает позицию клетки
+	* \param _x коордиата х
+	* \param _y координата у
+	*/
 	void set_position(float _x, float _y) {
 		this->square.setPosition(_x, _y);
 	}
