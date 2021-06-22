@@ -42,12 +42,15 @@ public:
 			}
 		}
 	}
-	/** Выбор шашки
+	/** 
+	*\brief Выбор шашки
+	*\param _event событие нажатия на кнопку мыши
+	
 	* нажатие на клетку
 	* отмена выбора
 	* дальнейший ход
 	*/
-	void choise_of_chacker(sf::RenderWindow &_window, sf::Event _event) {
+	void choise_of_chacker(sf::Event _event) {
 		if (_event.type == sf::Event::MouseButtonPressed) {
 			if (_event.key.code == sf::Mouse::Left || _event.key.code == sf::Mouse::Right) {
 				set_mause_position(_window);
@@ -92,14 +95,18 @@ public:
 			}
 		}
 	}
-	///Ход обычной шашки
-	/** обычный ход
+	
+	/**
+	*\brief Ход обычной шашки
+	*\param _event событие нажатия на кнопку мыши
+	
+	* обычный ход
 	* шашка доходит до края доски и становится дамкой
 	* изменение координат
 	* шашка перестает быть выбранной
 	*снятие выделений с клеток
 	*/
-	void change_position(sf::RenderWindow &_window, sf::Event _event) {
+	void change_position(sf::Event _event) {
 		if (_event.type == sf::Event::MouseButtonPressed) {
 			if (_event.key.code == sf::Mouse::Left) {
 				if (checkers_on_board.get_checker(choise_chacker).get_select() == 1 && select_is_made == 1) {
@@ -188,7 +195,11 @@ public:
 	}
 	
 	///Варианты съесть шашку
-	/** Которая находится
+	/** 
+	*\brief проверка вариантов возможностей съесть шашку
+	*\param _сolor цвет шашки, которой игрок собирается съесть другую
+	
+	*проверка клеток:
 	*справа внизу
 	*слева внизу
 	*справа вверху
@@ -298,7 +309,11 @@ public:
 	}
 	
 	///Варианты хода дамки
-	/** правая нижняя диагональ
+	/** 
+	*\brief ходы дамки
+	*\param _color цвет дамки
+	
+	* правая нижняя диагональ
 	* левая нижняя диагональ
 	* правая верхняя диагональ
 	*левая верхняя диагональ
@@ -533,14 +548,25 @@ public:
 		return 0;
 	}
 	
-	///Проверка выхода за пределы поля
+	/**
+	*\brief Проверка выхода за пределы поля
+	*\param _x абсцисса проверяемой координаты
+	*\param _y ордината проверяемой координаты
+	*/
+	
 	bool not_end_of_board(float _x, float _y) {
 		if (_x >= 0 && _x < 8 && _y >= 0 && _y < 8) {
 			return 1;
 		}
 		return 0;
 	}
-	///Стартовый экран
+	
+	/**
+	\brief Стартовый экран
+	\param _window окно с изображением
+	\param _event событие нажатия кнопки мыши
+	\param _start начата игра или нет (_start==0, если начата и _start==1, если не начата)
+	*/
 	void start_game(sf::RenderWindow &_window, sf::Event _event, bool &_start) {
 		sf::Font font;
 		font.loadFromFile("Font//20832.ttf");
@@ -563,10 +589,10 @@ public:
 		}
 	}
 	
-	///Конец игры
-	/** подсчет шашек
-	* если черные победили
-	* если белые победили
+	/**
+	*\brief Конец игры
+	*\param _window окно с изображением
+	*\param _event событие закрытия окна
 	*/
 	bool end_game(sf::RenderWindow &_window, sf::Event _event) {
 		int black = 0;
