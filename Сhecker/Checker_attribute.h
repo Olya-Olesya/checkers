@@ -52,8 +52,8 @@ public:
 		this->damka = 1;
 	}
 	/**Задает координаты шашки
-	@param _x_position координата x
-	@param _y_position координата y
+	* \param _x_position координата x
+	* \param _y_position координата y
 	*/
 	void set_position(float _x_position, float _y_position) {
 		this->checker.setPosition(_x_position, _y_position);
@@ -77,9 +77,9 @@ public:
 	///Окраска шашек
 	/**Если шашка белая, то окрашивается в светло-голубой цвет
 	*Если шашка черная, то окашивается в темно-синий
-	@param _x_position координата x
-	@param _y_position координата y
-	@param _color проверяет цвет, если 0 - белые, если 1- черные
+	* \param _x_position координата x
+	* \param _y_position координата y
+	* \param _color проверяет цвет, если 0 - белые, если 1- черные
 	*/
 	Checker_attribute(float _x_position, float _y_position, bool _color) {
 		this->checker.setOutlineThickness(3);
