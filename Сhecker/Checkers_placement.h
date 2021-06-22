@@ -64,7 +64,8 @@ public:
 	void delete_checker() {
 		checkers.pop_back();
 	}
-
+	
+	/**Начало расставлений шашек на поле*/
 	Checkers_placement() {
 		start_game();
 	};
