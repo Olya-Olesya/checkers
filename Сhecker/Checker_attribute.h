@@ -6,7 +6,7 @@
 */
 class Checker_attribute {
 private:
-	sf::CircleShape checker = sf::CircleShape(38); ///< радиус шашки
+	sf::CircleShape checker = sf::CircleShape(38); ///< радиус шашки 38 пикселей
 
 	bool checker_color; ///< цвет шашки: 0 - белая, 1 - черная
 	bool damka = 0; ///< статус шашки: 0 - обычная шашка, 1 - дамка
@@ -51,9 +51,10 @@ public:
 	void make_damka() {
 		this->damka = 1;
 	}
-	/**Задает координаты шашки
-	* \param _x_position координата x
-	* \param _y_position координата y
+	/**
+	*\brief Задает координаты шашки
+	*\param _x_position абсцисса шашки
+	*\param _y_position ордината шашки
 	*/
 	void set_position(float _x_position, float _y_position) {
 		this->checker.setPosition(_x_position, _y_position);
@@ -77,9 +78,12 @@ public:
 	///Окраска шашек
 	/**Если шашка белая, то окрашивается в светло-голубой цвет
 	*Если шашка черная, то окашивается в темно-синий
-	* \param _x_position координата x
-	* \param _y_position координата y
-	* \param _color проверяет цвет, если 0 - белые, если 1- черные
+	
+	*\brief окраска шашек
+	
+	* \param _x_position абсцисса шашки
+	* \param _y_position ордината шашки
+	* \param _color цвет шашки, если 0 - белые, если 1- черные
 	*/
 	Checker_attribute(float _x_position, float _y_position, bool _color) {
 		this->checker.setOutlineThickness(3);
