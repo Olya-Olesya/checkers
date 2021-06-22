@@ -15,7 +15,9 @@ public:
 	Board &get_board() {
 		return this->board;
 	}
-	/// Возвращает номер шашки в массиве
+	/** Возвращает номер шашки в массиве
+	* \param _i номер в массиве
+	*/
 	Checker_attribute &get_checker(int _i) {
 		return this->checkers[_i];
 	}
