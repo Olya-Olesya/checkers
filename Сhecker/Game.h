@@ -564,7 +564,7 @@ public:
 	/**
 	\brief Стартовый экран
 	\param _window окно с изображением
-	\param _event событие нажатия кнопки мыши
+	\param _event событие нажатия любой кнопки
 	\param _start начата игра или нет (_start==0, если начата и _start==1, если не начата)
 	*/
 	void start_game(sf::RenderWindow &_window, sf::Event _event, bool &_start) {
