@@ -69,7 +69,10 @@ public:
 		start_game();
 	};
 
-	/**Запуск функций рисования доски и шашек*/
+	/**
+	*\brief запуск функций рисования доски и шашек
+	*\param _window окно для рисования
+	*/
 	void draw_checkers(sf::RenderWindow &_window) {
 		board.draw_board(_window);
 		for (int i = 0; i < checkers.size(); i++) {
