@@ -59,7 +59,11 @@ public:
 	void set_position(float _x_position, float _y_position) {
 		this->checker.setPosition(_x_position, _y_position);
 	}
-	///Устанавливает цвет шашки
+	
+	/**
+	*\brief Устанавливает цвет шашки
+	*\param _color цвет шашки в палитре RGB
+	*/
 	void set_color(sf::Color _color) {
 		this->checker.setFillColor(_color);
 	}
