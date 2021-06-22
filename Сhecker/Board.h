@@ -11,7 +11,10 @@ private:
 	Square_attribute all_squares[8][8];
 public:
 	Board(){}
-	/// Возращает координаты клеток
+	/** Возращает координаты клеток
+	* \param _i номер квдрата в массиве по оси х
+	* \param _j номер квадрата в массиве по оси у
+	*/
 	Square_attribute &get_all_squares(int _i, int _j) {
 		return this->all_squares[_i][_j];
 	}
@@ -42,7 +45,7 @@ public:
 
 		/**Пишет координаты клеток шахматной доски*/
 		sf::Font font;///< Использует в надписях шрифт
-		font.loadFromFile("Font//20832.ttf");
+		font.loadFromFile("Font//20832.ttf");///< Загружает шрифт
 		sf::Text *sym[16];///< Колличество символов
 		for (int i = 0; i < 16; i++) {
 		sym[i] = new sf::Text("", font, 50);///< Размер текста
