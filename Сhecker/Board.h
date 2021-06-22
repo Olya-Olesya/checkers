@@ -71,7 +71,7 @@ public:
 		sym[13]->setString(L"F");
 		sym[14]->setString(L"G");
 		sym[15]->setString(L"H");
-		///< Расставляет цифры на экране
+		/// Расставляет цифры на экране
 		for (int i = 0; i < 8; i++) {
 			sym[i]->setFillColor(sf::Color::Black);///< Цвет
 			sym[i]->setPosition(45, i * 90 + 105);///< расположение на экране с левой стороны
@@ -79,7 +79,7 @@ public:
 			sym[i]->setPosition(830, i * 90 + 105);/// <расположение на экране с правой стороны
 			_window.draw(*sym[i]);///< рисует на экране правые цифры
 		}
-		///< Расставляет буквы на экране
+		/// Расставляет буквы на экране
 		for (int i = 8; i < 16; i++) {
 			sym[i]->setFillColor(sf::Color::Black); ///< Цвет
 			sym[i]->setPosition((i - 8) * 90 + 120, 20);///< расположение на экране сверху
